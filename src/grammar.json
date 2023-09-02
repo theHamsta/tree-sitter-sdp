@@ -1,0 +1,640 @@
+{
+  "name": "sdp",
+  "rules": {
+    "message": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "message_info"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "media"
+          }
+        }
+      ]
+    },
+    "_newline": {
+      "type": "PATTERN",
+      "value": "[\\r\\n]+"
+    },
+    "username": {
+      "type": "PATTERN",
+      "value": "\\S+"
+    },
+    "sess_id": {
+      "type": "PATTERN",
+      "value": "[0-9]+"
+    },
+    "sess_version": {
+      "type": "PATTERN",
+      "value": "[0-9]+"
+    },
+    "nettype": {
+      "type": "STRING",
+      "value": "IN"
+    },
+    "addr_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "IP4"
+        },
+        {
+          "type": "STRING",
+          "value": "IP6"
+        }
+      ]
+    },
+    "unicast_address": {
+      "type": "SYMBOL",
+      "name": "ip"
+    },
+    "ip": {
+      "type": "PATTERN",
+      "value": "\\S+"
+    },
+    "ttl": {
+      "type": "PATTERN",
+      "value": "\\d{3}"
+    },
+    "message_info": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_empty_line"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "version"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_empty_line"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "session_name"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "origin"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "information"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "uri"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "email"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "phone"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "connection"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bandwidth"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "encryption_key"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "time_description"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "repeat_times"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "timezone_adjustment"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "attribute"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "version": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "v="
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\d"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "_empty_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\s+"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "session_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "s="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "origin": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "o="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "username"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "sess_id"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "sess_version"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "nettype"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "addr_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unicast_address"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "information": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "i="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "uri": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "u="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "email": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "e="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "phone": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "p="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "connection": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "c="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "nettype"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "addr_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ip"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "/"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "ttl"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "bandwidth": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "b="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "encryption_key": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "k="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "attribute": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "a="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "attribute_name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ":"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "attribute_value"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "attribute_name": {
+      "type": "PATTERN",
+      "value": "[^ :]+"
+    },
+    "attribute_value": {
+      "type": "PATTERN",
+      "value": "[^\\r\\n]+"
+    },
+    "time_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "t="
+        },
+        {
+          "type": "FIELD",
+          "name": "start",
+          "content": {
+            "type": "SYMBOL",
+            "name": "time"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "end",
+          "content": {
+            "type": "SYMBOL",
+            "name": "time"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "repeat_times": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "r="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "timezone_adjustment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "z="
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "time": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "media": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "media_description"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_empty_line"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "information"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "connection"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "bandwidth"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "encryption_key"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "attribute"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "media_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "m="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "media_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "port"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "proto"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "format"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "media_type": {
+      "type": "PATTERN",
+      "value": "\\S+"
+    },
+    "port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\d+"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "/"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "\\d+"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "format": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "proto": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "udp"
+        },
+        {
+          "type": "STRING",
+          "value": "RTP/AVP"
+        },
+        {
+          "type": "STRING",
+          "value": "RTP/SAVP"
+        },
+        {
+          "type": "STRING",
+          "value": "RTP/SAVPF"
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "[ ]+"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+

@@ -1,0 +1,101 @@
+================================================================================
+Example from GStreamer
+================================================================================
+
+v=0
+o=- 1188340656180883 1 IN IP4 127.0.0.1
+s=Session streamed by GStreamer
+i=server.sh
+t=0 0
+a=tool:GStreamer
+a=type:broadcast
+m=audio 5002 RTP/AVP 8
+c=IN IP4 127.0.0.1
+
+--------------------------------------------------------------------------------
+
+(message
+  (message_info
+    (version)
+    (origin
+      (username)
+      (sess_id)
+      (sess_version)
+      (nettype)
+      (addr_type)
+      (unicast_address
+        (ip)))
+    (session_name)
+    (information)
+    (time_description
+      (time)
+      (time))
+    (attribute
+      (attribute_name)
+      (attribute_value))
+    (attribute
+      (attribute_name)
+      (attribute_value)))
+  (media
+    (media_description
+      (media_type)
+      (port)
+      (proto)
+      (format))
+    (connection
+      (nettype)
+      (addr_type)
+      (ip))))
+
+================================================================================
+Example from Wikipedia
+================================================================================
+v=0
+o=jdoe 2890844526 2890842807 IN IP4 10.47.16.5
+s=SDP Seminar
+i=A Seminar on the session description protocol
+u=http://www.example.com/seminars/sdp.pdf
+e=j.doe@example.com (Jane Doe)
+c=IN IP4 224.2.17.12/127
+t=2873397496 2873404696
+a=recvonly
+m=audio 49170 RTP/AVP 0
+m=video 51372 RTP/AVP 99
+a=rtpmap:99 h263-1998/90000
+
+--------------------------------------------------------------------------------
+
+(message
+  (message_info
+    (version)
+    (origin
+      (username)
+      (sess_id)
+      (sess_version)
+      (nettype)
+      (addr_type)
+      (unicast_address
+        (ip)))
+    (session_name)
+    (information)
+    (uri)
+    (email)
+    (connection
+      (nettype)
+      (addr_type)
+      (ip))
+    (time_description
+      (time)
+      (time))
+    (attribute
+      (attribute_name)
+      (ERROR)))
+  (media
+    (media_description
+      (media_type)
+      (port)
+      (proto)
+      (format))
+    (attribute
+      (attribute_name)
+      (attribute_value))))

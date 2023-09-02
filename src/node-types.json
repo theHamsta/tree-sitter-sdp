@@ -1,0 +1,481 @@
+[
+  {
+    "type": "addr_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "attribute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_name",
+          "named": true
+        },
+        {
+          "type": "attribute_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attribute_value",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bandwidth",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "connection",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "addr_type",
+          "named": true
+        },
+        {
+          "type": "ip",
+          "named": true
+        },
+        {
+          "type": "nettype",
+          "named": true
+        },
+        {
+          "type": "ttl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "email",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "encryption_key",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "format",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "information",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "ip",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "media",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "bandwidth",
+          "named": true
+        },
+        {
+          "type": "connection",
+          "named": true
+        },
+        {
+          "type": "encryption_key",
+          "named": true
+        },
+        {
+          "type": "information",
+          "named": true
+        },
+        {
+          "type": "media_description",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "media_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "format",
+          "named": true
+        },
+        {
+          "type": "media_type",
+          "named": true
+        },
+        {
+          "type": "port",
+          "named": true
+        },
+        {
+          "type": "proto",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "media_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "message",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "media",
+          "named": true
+        },
+        {
+          "type": "message_info",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "message_info",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "bandwidth",
+          "named": true
+        },
+        {
+          "type": "connection",
+          "named": true
+        },
+        {
+          "type": "email",
+          "named": true
+        },
+        {
+          "type": "encryption_key",
+          "named": true
+        },
+        {
+          "type": "information",
+          "named": true
+        },
+        {
+          "type": "origin",
+          "named": true
+        },
+        {
+          "type": "phone",
+          "named": true
+        },
+        {
+          "type": "repeat_times",
+          "named": true
+        },
+        {
+          "type": "session_name",
+          "named": true
+        },
+        {
+          "type": "time_description",
+          "named": true
+        },
+        {
+          "type": "timezone_adjustment",
+          "named": true
+        },
+        {
+          "type": "uri",
+          "named": true
+        },
+        {
+          "type": "version",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "origin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "addr_type",
+          "named": true
+        },
+        {
+          "type": "nettype",
+          "named": true
+        },
+        {
+          "type": "sess_id",
+          "named": true
+        },
+        {
+          "type": "sess_version",
+          "named": true
+        },
+        {
+          "type": "unicast_address",
+          "named": true
+        },
+        {
+          "type": "username",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "phone",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "port",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "proto",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "repeat_times",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "sess_id",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "sess_version",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "session_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "time",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "time_description",
+    "named": true,
+    "fields": {
+      "end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "time",
+            "named": true
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "time",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "timezone_adjustment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "unicast_address",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ip",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "uri",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "username",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "version",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "IP4",
+    "named": false
+  },
+  {
+    "type": "IP6",
+    "named": false
+  },
+  {
+    "type": "RTP/AVP",
+    "named": false
+  },
+  {
+    "type": "RTP/SAVP",
+    "named": false
+  },
+  {
+    "type": "RTP/SAVPF",
+    "named": false
+  },
+  {
+    "type": "a=",
+    "named": false
+  },
+  {
+    "type": "attribute_name",
+    "named": true
+  },
+  {
+    "type": "b=",
+    "named": false
+  },
+  {
+    "type": "c=",
+    "named": false
+  },
+  {
+    "type": "e=",
+    "named": false
+  },
+  {
+    "type": "i=",
+    "named": false
+  },
+  {
+    "type": "k=",
+    "named": false
+  },
+  {
+    "type": "m=",
+    "named": false
+  },
+  {
+    "type": "nettype",
+    "named": true
+  },
+  {
+    "type": "o=",
+    "named": false
+  },
+  {
+    "type": "p=",
+    "named": false
+  },
+  {
+    "type": "r=",
+    "named": false
+  },
+  {
+    "type": "s=",
+    "named": false
+  },
+  {
+    "type": "t=",
+    "named": false
+  },
+  {
+    "type": "ttl",
+    "named": true
+  },
+  {
+    "type": "u=",
+    "named": false
+  },
+  {
+    "type": "udp",
+    "named": false
+  },
+  {
+    "type": "v=",
+    "named": false
+  },
+  {
+    "type": "z=",
+    "named": false
+  }
+]
